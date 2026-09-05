@@ -5,23 +5,23 @@ import { ArrowRight, FileText, AlertTriangle, CheckCircle, Clock } from "lucide-
 
 export default function EArrivalCardPage() {
   return (
-    <div className="min-h-screen py-12 relative z-10">
+    <div className="min-h-screen py-6 sm:py-12 relative z-10">
       <div className="max-w-4xl mx-auto px-4">
         
         {/* Header Alert */}
-        <div className="bg-emerald-700 text-white p-8 rounded-2xl shadow-lg mb-12 text-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-12 opacity-10">
-            <FileText className="w-32 h-32" />
+        <div className="bg-emerald-700 text-white p-5 sm:p-8 rounded-2xl shadow-lg mb-8 sm:mb-12 text-center relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-8 sm:p-12 opacity-10 pointer-events-none">
+            <FileText className="w-24 h-24 sm:w-32 sm:h-32" />
           </div>
-          <h1 className="text-3xl font-bold mb-4 relative z-10">e-Arrival Card</h1>
-          <p className="text-emerald-100 text-lg relative z-10 mb-8 max-w-2xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 relative z-10">e-Arrival Card</h1>
+          <p className="text-emerald-100 text-sm sm:text-base md:text-lg relative z-10 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Mandatory arrival information form for all foreign nationals and OCI cardholders entering India. 
             Must be submitted within 72 hours before arrival.
           </p>
-          <div className="inline-flex flex-col sm:flex-row gap-4 relative z-10">
+          <div className="inline-flex flex-col sm:flex-row gap-4 relative z-10 w-full sm:w-auto">
             <Link
               href="#apply"
-              className="bg-white text-emerald-800 hover:bg-emerald-50 px-8 py-3.5 rounded-xl font-semibold transition-all shadow-md"
+              className="bg-white text-emerald-800 hover:bg-emerald-50 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-semibold transition-all shadow-md text-center"
             >
               Fill e-Arrival Card <ArrowRight className="w-4 h-4 inline ml-2" />
             </Link>

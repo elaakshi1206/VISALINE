@@ -10,8 +10,8 @@ export interface ApplicantProfile {
 }
 
 export const mockProfile: ApplicantProfile = {
-  fullName: 'John Doe',
-  email: 'john.doe@example.com',
+  fullName: 'Elaakshi Walondre',
+  email: 'elaakshiwalondre@example.com',
   phone: '+1 (555) 000-1234',
   nationality: 'American',
   dateOfBirth: '15 Mar 1990',

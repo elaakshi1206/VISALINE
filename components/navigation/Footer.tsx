@@ -1,7 +1,7 @@
 import Link from "next/link";
 import {
   Camera, Users, MessageCircle, Video, Briefcase,
-  ExternalLink, Shield, Phone, Mail
+  ExternalLink, Shield, Phone
 } from "lucide-react";
 import { GOVERNMENT_LINKS } from "@/data/visaData";
 

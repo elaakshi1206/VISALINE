@@ -66,25 +66,25 @@ const FindVisaWizard = () => {
   };
 
   return (
-    <div className="bg-white rounded-[2rem] shadow-[0_20px_60px_rgb(0,0,0,0.08)] border border-slate-200 p-10 relative overflow-hidden">
+    <div className="bg-white rounded-2xl sm:rounded-[2rem] shadow-[0_20px_60px_rgb(0,0,0,0.08)] border border-slate-200 p-5 sm:p-8 md:p-10 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-80 h-80 pointer-events-none translate-x-10 -translate-y-10">
         <TajMahalSVG className="w-full h-full opacity-20 fill-navy" />
       </div>
       
       <div className="relative z-10">
-        <h3 className="text-2xl font-bold text-navy mb-2">Find Your Visa</h3>
-        <p className="text-slate-500 mb-8 text-sm">Answer a few questions to see your eligible visa options.</p>
+        <h3 className="text-xl sm:text-2xl font-bold text-navy mb-2">Find Your Visa</h3>
+        <p className="text-slate-500 mb-6 sm:mb-8 text-xs sm:text-sm">Answer a few questions to see your eligible visa options.</p>
 
         <AnimatePresence mode="wait">
           {step === 0 && (
             <motion.div key="step0" initial={{opacity:0, x:20}} animate={{opacity:1, x:0}} exit={{opacity:0, x:-20}}>
-              <p className="font-semibold text-slate-800 mb-6 text-lg">What is the purpose of your visit?</p>
-              <div className="flex flex-wrap gap-4">
+              <p className="font-semibold text-slate-800 mb-4 sm:mb-6 text-base sm:text-lg">What is the purpose of your visit?</p>
+              <div className="flex flex-wrap gap-2.5 sm:gap-4">
                 {['Tourism', 'Business', 'Medical', 'Conference', 'Other'].map(p => (
                   <button 
                     key={p} 
                     onClick={() => nextStep('purpose', p)} 
-                    className="px-6 py-3 rounded-full border-2 border-slate-100 text-slate-600 font-medium hover:border-saffron hover:bg-saffron/5 hover:text-saffron-600 transition-all shadow-sm hover:shadow-md cursor-pointer"
+                    className="px-4 sm:px-6 py-2.5 sm:py-3 rounded-full border-2 border-slate-100 text-slate-600 text-sm sm:text-base font-medium hover:border-saffron hover:bg-saffron/5 hover:text-saffron-600 transition-all shadow-sm hover:shadow-md cursor-pointer"
                   >
                     {p}
                   </button>
@@ -214,10 +214,10 @@ export default function HomePage() {
 
   const slides = [
     "/hero-indian-woman.jpg",
+    "/visa_application_slide.jpg",
     "/slider_ls_1.png", 
-    "/slider_ls_2.png", 
-    "/slider_ls_3.jpg", 
-    "/slider_ls_4.png"  
+    "/slider_ls_2.jpg", 
+    "/slider_ls_3.png"  
   ];
 
   useEffect(() => {
@@ -236,22 +236,21 @@ export default function HomePage() {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
 
   return (
     <div ref={containerRef} className="relative min-h-screen bg-slate-50">
       
       <NotificationTicker />
 
-      {/* 1. HERO - FULL SCREEN */}
-      <section className="relative h-[90vh] min-h-[600px] overflow-hidden bg-navy flex items-center">
+      {/* 1. HERO - DYNAMIC VIEWPORT HEIGHT */}
+      <section className="relative h-[88dvh] min-h-[520px] sm:min-h-[580px] lg:min-h-[660px] max-h-[960px] overflow-hidden bg-navy flex items-center">
         <motion.div 
           style={{ y: heroY, opacity: heroOpacity, scale: heroScale }}
           className="absolute inset-0 z-0 origin-bottom"
         >
-          {/* Crisp, subtle legibility gradient only behind text, keeping image bright and vivid */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/35 to-transparent z-10 w-full md:w-[52%]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent z-10" />
+          {/* Legibility gradient behind text: full-width subtle veil on mobile, fading out on desktop */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-navy/20 md:to-transparent z-10 w-full md:w-[55%]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
           
           <AnimatePresence mode="popLayout" initial={false}>
             <motion.div
@@ -267,7 +266,10 @@ export default function HomePage() {
                 alt="India Visa Background"
                 fill
                 sizes="100vw"
-                className="object-cover object-[center_20%] scale-[1.01] brightness-[1.03] contrast-[1.04]"
+                className={cn(
+                  "object-cover scale-[1.01] brightness-[1.03] contrast-[1.04]",
+                  slides[currentSlide].includes("hero-indian-woman") ? "object-[center_20%]" : "object-center"
+                )}
                 priority={currentSlide === 0}
                 quality={100}
               />
@@ -275,32 +277,32 @@ export default function HomePage() {
           </AnimatePresence>
         </motion.div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-0">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-100 text-xs font-semibold tracking-wide uppercase mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-blue-100 text-xs font-semibold tracking-wide uppercase mb-4 sm:mb-6">
               <Shield className="w-3.5 h-3.5 text-saffron" />
               {t('hero.badge')}
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-playfair font-bold text-white leading-[1.1] mb-6">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white leading-[1.15] sm:leading-[1.1] mb-4 sm:mb-6">
               {t('hero.welcome')}<br/>
               <span className="text-blue-200">{t('hero.journey')}</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-blue-50 mb-10 max-w-xl font-light leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-50 mb-6 sm:mb-10 max-w-xl font-light leading-relaxed">
               {t('hero.description')}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="#services" className="inline-flex items-center justify-center gap-2 bg-saffron hover:bg-saffron-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg hover:shadow-saffron/30 hover:-translate-y-0.5">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
+              <Link href="#services" className="inline-flex items-center justify-center gap-2 bg-saffron hover:bg-saffron-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all shadow-lg hover:shadow-saffron/30 hover:-translate-y-0.5 active:translate-y-0 text-center">
                 {t('hero.explore')}
               </Link>
-              <Link href="/apply/type-selection" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all hover:-translate-y-0.5">
+              <Link href="/apply/type-selection" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg transition-all hover:-translate-y-0.5 active:translate-y-0 text-center">
                 {t('hero.applyEVisa')} <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
@@ -326,12 +328,11 @@ export default function HomePage() {
       </section>
 
       {/* 2. SERVICES SECTION */}
-      <motion.section 
-        style={{ y: contentY }}
+      <section 
         id="services" 
-        className="relative z-30 pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+        className="relative z-10 pt-16 sm:pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
       >
-        <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden rounded-[3rem]">
+        <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden rounded-2xl sm:rounded-[3rem]">
           <Image src="/bg_homepage_updates.png" alt="India Gate Sunset Background" fill quality={95} sizes="(max-width: 1280px) 100vw, 1280px" className="object-cover opacity-50" />
         </div>
 
@@ -402,7 +403,7 @@ export default function HomePage() {
         {/* Guided Wizard */}
         <FindVisaWizard />
 
-      </motion.section>
+      </section>
 
       {/* 3. LATEST UPDATES / HOW IT WORKS */}
       <section className="py-24 bg-white border-y border-slate-100 relative overflow-hidden">
@@ -492,9 +493,9 @@ export default function HomePage() {
       </section>
 
       {/* 4. TRUST SECTION */}
-      <section className="py-24 bg-navy text-white text-center relative overflow-hidden">
+      <section className="py-14 sm:py-20 lg:py-24 bg-navy text-white text-center relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 lg:gap-12">
             {[
               { title: "Simple", desc: "Streamlined digital applications", icon: Smartphone },
               { title: "Secure", desc: "Encrypted data protection", icon: Shield },
@@ -504,11 +505,11 @@ export default function HomePage() {
               const Icon = item.icon;
               return (
                 <div key={i} className="flex flex-col items-center group">
-                  <div className="w-20 h-20 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 backdrop-blur-md group-hover:bg-white/10 group-hover:scale-110 transition-all duration-300 shadow-xl">
-                    <Icon className="w-10 h-10 text-saffron group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 sm:w-18 sm:h-18 lg:w-20 lg:h-20 rounded-2xl sm:rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center mb-3 sm:mb-6 backdrop-blur-md group-hover:bg-white/10 group-hover:scale-105 transition-all duration-300 shadow-xl">
+                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-saffron group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 tracking-wide">{item.title}</h3>
-                  <p className="text-sm text-blue-200/80 font-medium">{item.desc}</p>
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold mb-1 sm:mb-2 tracking-wide">{item.title}</h3>
+                  <p className="text-xs sm:text-sm text-blue-200/80 font-medium">{item.desc}</p>
                 </div>
               )
             })}

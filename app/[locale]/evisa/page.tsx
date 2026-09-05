@@ -20,18 +20,18 @@ export default function EVisaPage() {
   );
 
   return (
-    <div className="min-h-screen py-12 relative">
+    <div className="min-h-screen py-6 sm:py-12 relative">
       
       {/* Hero */}
-      <section className="bg-navy py-16 text-white text-center relative z-10 shadow-md rounded-2xl max-w-7xl mx-auto mb-8 px-4">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
-          <p className="text-blue-200 text-lg mb-8">
+      <section className="bg-navy py-10 sm:py-16 text-white text-center relative z-10 shadow-md rounded-2xl max-w-7xl mx-auto mb-6 sm:mb-8 px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto px-2 sm:px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">{t('title')}</h1>
+          <p className="text-blue-200 text-sm sm:text-base md:text-lg mb-6 sm:mb-8">
             {t('description')}
           </p>
           <Link
             href="/apply/type-selection?type=evisa"
-            className="inline-flex items-center gap-2 bg-saffron hover:bg-saffron-600 px-8 py-3.5 rounded-xl font-semibold transition-all shadow-lg hover:-translate-y-1"
+            className="inline-flex items-center justify-center gap-2 bg-saffron hover:bg-saffron-600 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl font-semibold transition-all shadow-lg hover:-translate-y-1 w-full sm:w-auto text-center"
           >
             Start eVisa Application <ArrowRight className="w-4 h-4" />
           </Link>

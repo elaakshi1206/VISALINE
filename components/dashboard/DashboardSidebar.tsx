@@ -11,12 +11,12 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const navItems = [
-  { href: "/dashboard/overview",      label: "Dashboard",      icon: LayoutDashboard },
-  { href: "/dashboard/applications",  label: "My Applications", icon: FileText },
-  { href: "/dashboard/documents",     label: "My Documents",   icon: FolderOpen },
-  { href: "/dashboard/notifications", label: "Notifications",  icon: Bell, badge: 3 },
-  { href: "/dashboard/profile",       label: "My Profile",     icon: User },
-  { href: "/dashboard/help",          label: "Help & Support", icon: HelpCircle },
+  { href: "/dashboard/overview", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/dashboard/applications", label: "My Applications", icon: FileText },
+  { href: "/dashboard/documents", label: "My Documents", icon: FolderOpen },
+  { href: "/dashboard/notifications", label: "Notifications", icon: Bell, badge: 3 },
+  { href: "/dashboard/profile", label: "My Profile", icon: User },
+  { href: "/dashboard/help", label: "Help & Support", icon: HelpCircle },
 ];
 
 interface Props {
@@ -34,7 +34,7 @@ export default function DashboardSidebar({ collapsed, onCollapse, mobileOpen, on
       {/* Logo */}
       <div className={cn("flex items-center gap-3 px-4 py-5 border-b border-slate-100", collapsed && "justify-center px-3")}>
         <div className="w-10 h-10 rounded-xl overflow-hidden border border-slate-200 flex-shrink-0 shadow-sm">
-          <Image src="/visaline_logo.jpg" alt="Visaline" width={40} height={40} className="object-cover w-full h-full" />
+          <Image src="/visaline_logo.jpg" alt="Visaline" width={40} height={40} className=" object-cover w-full h-full" />
         </div>
         {!collapsed && (
           <div>
