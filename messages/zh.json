@@ -1,0 +1,24 @@
+{
+  "Navbar": {
+    "home": "首页",
+    "visa": "签证指南",
+    "evisa": "电子签证 (e-Visa)",
+    "earrivalcard": "电子入境卡",
+    "application": "在线申请",
+    "resources": "常见问题与资源",
+    "help": "帮助中心",
+    "regularVisa": "常规纸质签证",
+    "visaOnArrival": "落地签证",
+    "status": "查询进度",
+    "applyNow": "立即申请"
+  },
+  "EVisa": {
+    "title": "申请印度电子签证",
+    "description": "面向171个国家的公民提供电子签证服务。您可以全程在线办理。",
+    "searchPlaceholder": "搜索您的国家..."
+  },
+  "Forms": {
+    "required": "此字段为必填项",
+    "invalidEmail": "请输入有效的电子邮箱地址"
+  }
+}

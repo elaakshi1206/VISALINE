@@ -1,0 +1,24 @@
+{
+  "Navbar": {
+    "home": "Startseite",
+    "visa": "Visum",
+    "evisa": "e-Visum",
+    "earrivalcard": "e-Arrival Karte",
+    "application": "Antrag",
+    "resources": "Ressourcen",
+    "help": "Hilfe",
+    "regularVisa": "Reguläres Visum",
+    "visaOnArrival": "Visum bei Ankunft",
+    "status": "Status Prüfen",
+    "applyNow": "Jetzt Beantragen"
+  },
+  "EVisa": {
+    "title": "e-Visum Beantragen",
+    "description": "Das e-Visum steht Staatsangehörigen von 171 Ländern zur Verfügung. Sie können online beantragen.",
+    "searchPlaceholder": "Land suchen..."
+  },
+  "Forms": {
+    "required": "Dieses Feld ist erforderlich",
+    "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+  }
+}

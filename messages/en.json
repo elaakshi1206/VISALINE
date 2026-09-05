@@ -1,0 +1,24 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "visa": "Visa",
+    "evisa": "e-Visa",
+    "earrivalcard": "e-Arrival Card",
+    "application": "Application",
+    "resources": "Resources",
+    "help": "Help",
+    "regularVisa": "Regular Visa",
+    "visaOnArrival": "Visa on Arrival",
+    "status": "Check Status",
+    "applyNow": "Apply Now"
+  },
+  "EVisa": {
+    "title": "Apply for e-Visa",
+    "description": "The e-Visa facility is available for nationals of 171 countries. You can apply online.",
+    "searchPlaceholder": "Search for your country..."
+  },
+  "Forms": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address"
+  }
+}

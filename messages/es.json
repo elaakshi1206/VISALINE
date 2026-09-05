@@ -1,0 +1,24 @@
+{
+  "Navbar": {
+    "home": "Inicio",
+    "visa": "Visado",
+    "evisa": "e-Visa",
+    "earrivalcard": "Tarjeta e-Arrival",
+    "application": "Solicitud",
+    "resources": "Recursos",
+    "help": "Ayuda",
+    "regularVisa": "Visa Regular",
+    "visaOnArrival": "Visa a la Llegada",
+    "status": "Verificar Estado",
+    "applyNow": "Aplicar Ahora"
+  },
+  "EVisa": {
+    "title": "Solicitar e-Visa",
+    "description": "La instalación de e-Visa está disponible para nacionales de 171 países. Puede aplicar en línea.",
+    "searchPlaceholder": "Buscar su país..."
+  },
+  "Forms": {
+    "required": "Este campo es obligatorio",
+    "invalidEmail": "Por favor introduzca una dirección de correo electrónico válida"
+  }
+}

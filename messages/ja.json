@@ -1,0 +1,24 @@
+{
+  "Navbar": {
+    "home": "ホーム",
+    "visa": "ビザ",
+    "evisa": "e-Visa",
+    "earrivalcard": "電子入国カード",
+    "application": "申請手続き",
+    "resources": "資料・案内",
+    "help": "ヘルプ",
+    "regularVisa": "通常ビザ",
+    "visaOnArrival": "アライバルビザ",
+    "status": "申請状況確認",
+    "applyNow": "今すぐ申請"
+  },
+  "EVisa": {
+    "title": "e-Visaを申請する",
+    "description": "171か国の国民がe-Visaを利用できます。オンラインで簡単に申請可能です。",
+    "searchPlaceholder": "国名を入力..."
+  },
+  "Forms": {
+    "required": "この項目は必須です",
+    "invalidEmail": "有効なメールアドレスを入力してください"
+  }
+}

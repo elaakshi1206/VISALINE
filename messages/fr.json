@@ -1,0 +1,24 @@
+{
+  "Navbar": {
+    "home": "Accueil",
+    "visa": "Visa",
+    "evisa": "e-Visa",
+    "earrivalcard": "Carte e-Arrival",
+    "application": "Demande",
+    "resources": "Ressources",
+    "help": "Aide",
+    "regularVisa": "Visa Régulier",
+    "visaOnArrival": "Visa à l'Arrivée",
+    "status": "Vérifier le Statut",
+    "applyNow": "Postuler"
+  },
+  "EVisa": {
+    "title": "Demande de e-Visa",
+    "description": "Le service e-Visa est accessible aux ressortissants de 171 pays. Vous pouvez faire votre demande en ligne.",
+    "searchPlaceholder": "Rechercher votre pays..."
+  },
+  "Forms": {
+    "required": "Ce champ est obligatoire",
+    "invalidEmail": "Veuillez saisir une adresse e-mail valide"
+  }
+}
