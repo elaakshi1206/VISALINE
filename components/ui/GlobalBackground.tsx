@@ -13,7 +13,7 @@ export default function GlobalBackground() {
   }
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[0] overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden select-none">
       
       {/* Route-Specific Background Designs with Indian Monuments */}
       {pathname.includes("e-arrival-card") || pathname.includes("regular-visa") ? (

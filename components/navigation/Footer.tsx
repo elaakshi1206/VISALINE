@@ -7,25 +7,28 @@ import { GOVERNMENT_LINKS } from "@/data/visaData";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-dark text-white">
-      {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+    <footer className="relative z-20 bg-[#0A182E] text-white border-t border-slate-800 shadow-2xl">
+      {/* Subtle top accent line representing Indian tricolor colors subtly */}
+      <div className="h-1 w-full bg-gradient-to-r from-saffron via-white to-emerald" />
+
+      {/* Main footer container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-saffron rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">V</span>
+              <div className="w-10 h-10 bg-saffron rounded-xl flex items-center justify-center shadow-md flex-shrink-0">
+                <span className="text-white font-extrabold text-xl">V</span>
               </div>
               <div>
-                <div className="font-bold text-white text-lg">VISALINE</div>
-                <div className="text-xs text-slate-400">Government of India</div>
+                <div className="font-extrabold text-white text-lg sm:text-xl tracking-tight">VISALINE</div>
+                <div className="text-xs font-semibold text-slate-300 tracking-wider">Government of India</div>
               </div>
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed mb-4">
+            <p className="text-slate-300 text-sm leading-relaxed mb-5 max-w-sm">
               The authorized portal for visa applications to India. Managed by the Bureau of Immigration, Ministry of Home Affairs.
             </p>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-2.5">
               {[
                 { icon: Camera, href: "https://www.instagram.com/bureauofimmigrationindia", label: "Instagram" },
                 { icon: Users, href: "https://www.facebook.com/profile.php?id=61584135957737", label: "Facebook" },
@@ -39,7 +42,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-8 h-8 bg-white/10 hover:bg-saffron rounded-lg flex items-center justify-center transition-colors"
+                  className="w-9 h-9 bg-white/10 hover:bg-saffron hover:text-white text-slate-200 rounded-lg flex items-center justify-center transition-all duration-200 border border-white/10 shadow-sm"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -49,7 +52,10 @@ export default function Footer() {
 
           {/* Visa Services */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Visa Services</h3>
+            <h3 className="font-bold text-white mb-4 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-saffron inline-block"></span>
+              Visa Services
+            </h3>
             <ul className="space-y-2.5">
               {[
                 { label: "Apply for eVisa", href: "/apply/type-selection" },
@@ -63,10 +69,10 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-saffron text-sm transition-colors flex items-center gap-1.5"
+                    className="text-slate-300 hover:text-saffron text-sm transition-colors flex items-center gap-2 py-0.5"
                   >
-                    <span className="w-1 h-1 bg-saffron rounded-full flex-shrink-0" />
-                    {link.label}
+                    <span className="w-1.5 h-1.5 bg-saffron/70 rounded-full flex-shrink-0" />
+                    <span className="hover:translate-x-0.5 transition-transform">{link.label}</span>
                   </Link>
                 </li>
               ))}
@@ -75,7 +81,10 @@ export default function Footer() {
 
           {/* Information */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Information</h3>
+            <h3 className="font-bold text-white mb-4 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-blue-400 inline-block"></span>
+              Information
+            </h3>
             <ul className="space-y-2.5">
               {[
                 { label: "Visa Information", href: "/visa-information" },
@@ -89,10 +98,10 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-slate-400 hover:text-saffron text-sm transition-colors flex items-center gap-1.5"
+                    className="text-slate-300 hover:text-saffron text-sm transition-colors flex items-center gap-2 py-0.5"
                   >
-                    <span className="w-1 h-1 bg-saffron rounded-full flex-shrink-0" />
-                    {link.label}
+                    <span className="w-1.5 h-1.5 bg-blue-400/70 rounded-full flex-shrink-0" />
+                    <span className="hover:translate-x-0.5 transition-transform">{link.label}</span>
                   </Link>
                 </li>
               ))}
@@ -101,7 +110,10 @@ export default function Footer() {
 
           {/* Government Links */}
           <div>
-            <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Official Links</h3>
+            <h3 className="font-bold text-white mb-4 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
+              Official Links
+            </h3>
             <ul className="space-y-2.5">
               {GOVERNMENT_LINKS.slice(0, 7).map((link) => (
                 <li key={link.url}>
@@ -109,11 +121,13 @@ export default function Footer() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-saffron text-sm transition-colors flex items-center gap-1.5 group"
+                    className="text-slate-300 hover:text-saffron text-sm transition-colors flex items-center gap-2 py-0.5 group"
                   >
-                    <span className="w-1 h-1 bg-emerald-500 rounded-full flex-shrink-0" />
-                    {link.name}
-                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="w-1.5 h-1.5 bg-emerald-400/70 rounded-full flex-shrink-0" />
+                    <span className="hover:translate-x-0.5 transition-transform flex items-center gap-1.5">
+                      {link.name}
+                      <ExternalLink className="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                    </span>
                   </a>
                 </li>
               ))}
@@ -122,12 +136,12 @@ export default function Footer() {
         </div>
 
         {/* Security notice */}
-        <div className="border border-amber-500/30 bg-amber-500/10 rounded-xl p-4 mb-8">
-          <div className="flex items-start gap-3">
+        <div className="border border-amber-500/40 bg-[#162235] rounded-2xl p-4 sm:p-5 mb-8 shadow-lg">
+          <div className="flex items-start gap-3.5">
             <Shield className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
             <div>
-              <p className="text-amber-300 text-sm font-medium mb-1">Official Government Advisory</p>
-              <p className="text-slate-400 text-xs leading-relaxed">
+              <p className="text-amber-300 text-sm font-bold mb-1">Official Government Advisory</p>
+              <p className="text-slate-200 text-xs sm:text-sm leading-relaxed">
                 The Government of India does NOT authorize any agent or intermediary to charge fees for emergency, express visa, eVisas, or e-Arrival card facilitation. 
                 Apply only through official government portals. Beware of fraudulent websites and unauthorized agents.
               </p>
@@ -136,35 +150,44 @@ export default function Footer() {
         </div>
 
         {/* Helpdesk strip */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 pb-8 border-b border-white/10">
-          <div className="flex items-center gap-3 bg-white/5 rounded-xl p-4">
-            <Phone className="w-5 h-5 text-saffron flex-shrink-0" />
-            <div>
-              <div className="text-xs text-slate-400 mb-0.5">Payment Helpdesk — SBI ePay</div>
-              <div className="text-sm font-medium text-white">+91-022-65361671 (24×7)</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 pb-8 border-b border-slate-700/80">
+          <div className="flex items-center gap-3.5 bg-[#10223D] border border-slate-700/60 rounded-xl p-4 shadow-sm hover:border-slate-600 transition-colors">
+            <div className="w-10 h-10 rounded-lg bg-saffron/15 border border-saffron/30 flex items-center justify-center flex-shrink-0">
+              <Phone className="w-5 h-5 text-saffron" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-xs text-slate-300 mb-0.5 font-medium truncate">Payment Helpdesk — SBI ePay</div>
+              <div className="text-sm sm:text-base font-bold text-white tracking-wide">+91-022-65361671 <span className="text-xs text-slate-400 font-normal">(24×7)</span></div>
             </div>
           </div>
-          <div className="flex items-center gap-3 bg-white/5 rounded-xl p-4">
-            <Phone className="w-5 h-5 text-saffron flex-shrink-0" />
-            <div>
-              <div className="text-xs text-slate-400 mb-0.5">Payment Helpdesk — Axis Bank</div>
-              <div className="text-sm font-medium text-white">1800-419-0073 (24×7 Toll-free)</div>
+          <div className="flex items-center gap-3.5 bg-[#10223D] border border-slate-700/60 rounded-xl p-4 shadow-sm hover:border-slate-600 transition-colors">
+            <div className="w-10 h-10 rounded-lg bg-saffron/15 border border-saffron/30 flex items-center justify-center flex-shrink-0">
+              <Phone className="w-5 h-5 text-saffron" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-xs text-slate-300 mb-0.5 font-medium truncate">Payment Helpdesk — Axis Bank</div>
+              <div className="text-sm sm:text-base font-bold text-white tracking-wide">1800-419-0073 <span className="text-xs text-slate-400 font-normal">(24×7 Toll-free)</span></div>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
-          <div>
-            Content managed by <span className="text-slate-300">Bureau of Immigration, Ministry of Home Affairs</span> · 
-            Designed &amp; Developed by <span className="text-slate-300">NIC</span>
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-slate-400 text-center md:text-left">
+          <div className="leading-relaxed">
+            Content managed by <span className="text-slate-200 font-medium">Bureau of Immigration, Ministry of Home Affairs</span> · 
+            Designed &amp; Developed by <span className="text-slate-200 font-medium">NIC</span>
           </div>
-          <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy</Link>
-            <Link href="/privacy#terms" className="hover:text-slate-300 transition-colors">Terms</Link>
-            <Link href="/contact" className="hover:text-slate-300 transition-colors">Contact</Link>
-            <a href="https://boi.gov.in" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors flex items-center gap-1">
-              boi.gov.in <ExternalLink className="w-3 h-3" />
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/privacy#terms" className="hover:text-white transition-colors">Terms of Use</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+            <a 
+              href="https://boi.gov.in" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-white transition-colors inline-flex items-center gap-1 font-medium text-slate-300"
+            >
+              boi.gov.in <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>

@@ -12,6 +12,7 @@
   --color-emerald: #10B981;
   --color-emerald-light: #D1FAE5;
   --color-background: #F8F9FC;
+  --color-navy-footer: #0A182E;
 
   --image-hero-gradient: linear-gradient(135deg, #0F2547 0%, #1B3A6B 50%, #2B4E8C 100%);
   
@@ -27,12 +28,17 @@
   --saffron: #F97316;
 }
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -40,6 +46,10 @@ body {
   background-color: var(--bg);
   color: var(--text-primary);
   line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "../globals.css";
 import Navbar from "@/components/navigation/Navbar";
 import Footer from "@/components/navigation/Footer";
@@ -7,6 +7,14 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import GlobalBackground from "@/components/ui/GlobalBackground";
 import Chatbot from "@/components/ui/Chatbot";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: "#0A182E",
+};
 
 export const metadata: Metadata = {
   title: {
@@ -49,7 +57,7 @@ export default async function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-background font-sans antialiased">
+      <body className="min-h-screen w-full overflow-x-hidden flex flex-col bg-background font-sans antialiased">
         <NextIntlClientProvider messages={messages}>
           <Providers>
             <GlobalBackground />
